@@ -4,7 +4,7 @@ from models.attribute import Attribute
 class TestAttribute(unittest.TestCase):
 
     def setUp(self):
-        self.attribue = Attribute(1, 2, 3, 4, 5)
+        self.attribue = Attribute(1, 2, 3, 4, 5, 6)
 
     def test_can_get_strength(self):
         self.assertEqual(1, self.attribue.strength)
@@ -20,3 +20,6 @@ class TestAttribute(unittest.TestCase):
 
     def test_can_get_adaptability(self):
         self.assertEqual(5, self.attribue.adaptability)
+
+    def test_can_get_id(self):
+        self.assertEqual(6, self.attribue.id)
