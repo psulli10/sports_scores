@@ -37,7 +37,7 @@ CREATE TABLE games (
 );
 
 
-INSERT INTO teams (name, strength, speed, intelligence, fitness, adaptability) VALUES ('St Mirren', 5, 10, 8, 9, 7);
-INSERT INTO teams (name, strength, speed, intelligence, fitness, adaptability) VALUES ('Morton', 5, 10, 2, 4, 6);
-INSERT INTO players (name, strength, speed, intelligence, fitness, adaptability, team_id, squad_number) VALUES ('Peter', 5, 10, 10, 10, 10, 1, 3);
-INSERT INTO games (home_id, away_id, home_goals, away_goals) VALUES (1, 2, 2, 1)
+-- INSERT INTO teams (name, strength, speed, intelligence, fitness, adaptability) VALUES ('St Mirren', 5, 10, 8, 9, 7);
+-- INSERT INTO teams (name, strength, speed, intelligence, fitness, adaptability) VALUES ('Morton', 5, 10, 2, 4, 6);
+-- INSERT INTO players (name, strength, speed, intelligence, fitness, adaptability, team_id, squad_number) VALUES ('Peter', 5, 10, 10, 10, 10, 1, 3);
+-- INSERT INTO games (home_id, away_id, home_goals, away_goals) VALUES (1, 2, 2, 1)
