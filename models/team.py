@@ -9,6 +9,7 @@ class Team:
         self.wins = 0
         self.draws = 0
         self.defeats = 0
+        self.id = id
 
     def add_player(self, player):
         self.players.append(player)
