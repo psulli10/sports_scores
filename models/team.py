@@ -2,22 +2,28 @@ from models.attribute import Attribute
 
 class Team:
 
-    def __init__(self, name, id = None):
+    def __init__(self, name, players = None, id = None):
         self.name = name
         self.attributes = Attribute(0,0,0,0,0)
-        self.players = []
         self.wins = 0
         self.draws = 0
         self.defeats = 0
+        self.players = players
         self.id = id
 
     def add_player(self, player):
+        if self.players is None:
+            self.players = []
         self.players.append(player)
 
     def remove_player(self, player):
+        if self.players is None:
+            return None
         self.players.remove(player)
 
     def get_total_players(self):
+        if self.players is None:
+            return 0
         return len(self.players)
 
     def set_team_attributes(self):

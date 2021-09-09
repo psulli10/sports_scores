@@ -8,14 +8,15 @@ class TestTeam(unittest.TestCase):
     def setUp(self):
         self.attributes_1 = Attribute(10, 10, 10, 10, 10)
         self.attributes_2 = Attribute(8, 8, 8, 8, 8)
-        self.player_1 = Player("Peter Sullivan", self.attributes_1, 3)
-        self.player_2 = Player("Curtis Main", self.attributes_2, 9)
         self.team = Team("St Mirren")
+        self.player_1 = Player("Peter Sullivan", self.attributes_1, 3, "Defender", self.team)
+        self.player_2 = Player("Curtis Main", self.attributes_2, 9, "Attacker", self.team)
 
     def test_can_get_name(self):
         self.assertEqual("St Mirren", self.team.name)
 
     def test_players_list_starts_empty(self):
+        print("players dict: ", self.team.players)
         self.assertEqual(0, self.team.get_total_players())
 
     def test_wins_start_empty(self):

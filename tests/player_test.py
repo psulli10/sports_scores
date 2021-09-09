@@ -1,12 +1,14 @@
 import unittest
 from models.player import Player
 from models.attribute import Attribute
+from models.team import Team
 
 class TestPlayer(unittest.TestCase):
 
     def setUp(self):
         self.attributes = Attribute(10, 10, 10 , 10, 10)
-        self.player = Player("Peter Sullivan", self.attributes, 3, 5)
+        self.team = Team("St Mirren")
+        self.player = Player("Peter Sullivan", self.attributes, 3, "Defender", self.team, 5)
 
     def test_can_get_name(self):
         self.assertEqual("Peter Sullivan", self.player.name)
@@ -19,3 +21,9 @@ class TestPlayer(unittest.TestCase):
 
     def test_can_get_id(self):
         self.assertEqual(5, self.player.id)
+
+    def test_can_get_team(self):
+        self.assertEqual(self.team, self.player.team)
+
+    def test_can_get_position(self):
+        self.assertEqual("Defender", self.player.position)

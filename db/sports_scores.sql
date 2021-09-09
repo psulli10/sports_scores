@@ -25,6 +25,7 @@ CREATE TABLE players (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     squad_number INT,
+    position VARCHAR(255) NOT NULL,
     team_id INT REFERENCES teams(id)
 ) INHERITS (attributes);
 

@@ -9,10 +9,10 @@ class TestGame(unittest.TestCase):
     def setUp(self):
         self.attributes_1 = Attribute(10, 10, 10, 10, 10)
         self.attributes_2 = Attribute(8, 8, 8, 8, 8)
-        self.player_1 = Player("Peter Sullivan", self.attributes_1, 3)
-        self.player_2 = Player("Curtis Main", self.attributes_2, 9)
-        self.team_1 = Team("St Mirren", 1)
-        self.team_2 = Team("Greenock Morton", 2)
+        self.team_1 = Team("St Mirren", [], 1)
+        self.team_2 = Team("Greenock Morton", [], 2)
+        self.player_1 = Player("Peter Sullivan", self.attributes_1, 3, "Defender",  self.team_1)
+        self.player_2 = Player("Curtis Main", self.attributes_2, 9, "Attacker", self.team_1)
         self.game = Game(self.team_1, self.team_2, 4, 0)
 
     def test_can_get_home_team(self):
@@ -35,6 +35,7 @@ class TestGame(unittest.TestCase):
 
     def test_can_get_result__away_win(self):
         game_away_win = Game(self.team_1, self.team_2, 1, 2)
+        # print("away game dictionary", game_away_win.__dict__)
         self.assertEqual(2, game_away_win.get_result())
 
     def test_can_get_result__draw(self):
