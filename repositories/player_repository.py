@@ -20,3 +20,7 @@ def select_all():
         players.append(player)
 
     return players
+
+def delete_all():
+    sql = "DELETE  FROM players"
+    run_sql(sql)
