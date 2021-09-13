@@ -8,7 +8,8 @@ class TestTeam(unittest.TestCase):
     def setUp(self):
         self.attributes_1 = Attribute(10, 10, 10, 10, 10)
         self.attributes_2 = Attribute(8, 8, 8, 8, 8)
-        self.team = Team("St Mirren")
+        self.team_attributes = Attribute(0, 0, 0, 0, 0)
+        self.team = Team("St Mirren", self.team_attributes)
         self.player_1 = Player("Peter Sullivan", self.attributes_1, 3, "Defender", self.team)
         self.player_2 = Player("Curtis Main", self.attributes_2, 9, "Attacker", self.team)
 

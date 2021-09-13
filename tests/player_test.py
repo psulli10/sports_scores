@@ -7,7 +7,8 @@ class TestPlayer(unittest.TestCase):
 
     def setUp(self):
         self.attributes = Attribute(10, 10, 10 , 10, 10)
-        self.team = Team("St Mirren")
+        self.team_attributes = Attribute(10, 10, 10 , 10, 10)
+        self.team = Team("St Mirren", self.team_attributes)
         self.player = Player("Peter Sullivan", self.attributes, 3, "Defender", self.team, 5)
 
     def test_can_get_name(self):

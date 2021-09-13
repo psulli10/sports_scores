@@ -9,8 +9,11 @@ class TestGame(unittest.TestCase):
     def setUp(self):
         self.attributes_1 = Attribute(10, 10, 10, 10, 10)
         self.attributes_2 = Attribute(8, 8, 8, 8, 8)
-        self.team_1 = Team("St Mirren", [], 1)
-        self.team_2 = Team("Greenock Morton", [], 2)
+        self.team_attributes = Attribute(8, 8, 8, 8, 8)
+        self.team_1 = Team("St Mirren", self.team_attributes)
+        self.team_1.id = 1
+        self.team_2 = Team("Greenock Morton", self.team_attributes)
+        self.team_2.id = 2
         self.player_1 = Player("Peter Sullivan", self.attributes_1, 3, "Defender",  self.team_1)
         self.player_2 = Player("Curtis Main", self.attributes_2, 9, "Attacker", self.team_1)
         self.game = Game(self.team_1, self.team_2, 4, 0)
