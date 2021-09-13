@@ -1,6 +1,7 @@
 from models.attribute import Attribute
 from models.player import Player
 from db.run_sql import run_sql
+import repositories.team_repository as team_repository
 
 
 # CREATE
@@ -20,10 +21,22 @@ def select_all():
     results = run_sql(sql)
     for row in results:
         attributes = Attribute(row['strength'], row['speed'], row['intelligence'], row['fitness'], row['adaptability'])
-        player = Player(row['name'], attributes, row['squad_number'], row['position'], row['id'])
+        team = team_repository.select(row['team_id'])
+        player = Player(row['name'], attributes, row['squad_number'], row['position'], team, row['id'])
         players.append(player)
 
     return players
+
+def select(id):
+    sql = "SELECT * FROM players WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    attributes = Attribute(result['strength'], result['speed'], result['intelligence'], result['fitness'], result['adaptability'])
+    team = team_repository.select(result['team_id'])
+    player = Player(result['name'], attributes, result['squad_number'], result['position'], team, result['id'])
+    return player
+
+
 
 def select_all_by_team(team_id):
     sql = "SELECT * FROM players WHERE team_id = %s"
@@ -36,7 +49,6 @@ def select_all_by_team(team_id):
         players.append(player)
 
     return players
-
 
 # UPDATE
 

@@ -2,12 +2,12 @@ from models.attribute import Attribute
 
 class Team:
 
-    def __init__(self, name, players = None, id = None):
+    def __init__(self, name, attributes, wins = 0, draws = 0, defeats = 0, players = None, id = None):
         self.name = name
-        self.attributes = Attribute(0,0,0,0,0)
-        self.wins = 0
-        self.draws = 0
-        self.defeats = 0
+        self.attributes = attributes
+        self.wins = wins
+        self.draws = draws
+        self.defeats = defeats
         self.players = players
         self.id = id
 
