@@ -2,6 +2,8 @@ from models.attribute import Attribute
 from models.player import Player
 from db.run_sql import run_sql
 
+
+# CREATE
 def save(player):
     sql = "INSERT INTO players (name, squad_number, position, strength, speed, intelligence, fitness, adaptability, team_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
     values = [player.name, player.squad_number, player.position, player.attributes.strength, player.attributes.speed, player.attributes.intelligence, player.attributes.fitness, player.attributes.adaptability, player.team.id]
@@ -10,6 +12,8 @@ def save(player):
     player.id = id
     return player
 
+
+# READ
 def select_all():
     sql = "SELECT * FROM players"
     players = []
@@ -33,6 +37,21 @@ def select_all_by_team(team_id):
 
     return players
 
+
+# UPDATE
+
+def update(player):
+    sql = "UPDATE players SET (name, squad_number, position, strength, speed, intelligence, fitness, adaptability, team_id) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [player.name, player.squad_number, player.position, player.attributes.strength, player.attributes.speed, player.attributes.intelligence, player.attributes.fitness, player.attributes.adaptability, player.team.id, player.id]
+    run_sql(sql, values)
+
+# DELETE
+
 def delete_all():
     sql = "DELETE  FROM players"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE  FROM players WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

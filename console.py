@@ -14,6 +14,9 @@ team_repository.save(team_1)
 player_1 = Player("Jamie McGrath", player_attributes_1, 7, "Midfielder", team_1)
 player_repository.save(player_1)
 
+player_1.squad_number = 10
+player_repository.update(player_1)
+
 player_results = player_repository.select_all()
 team_results = team_repository.select_all()
 
