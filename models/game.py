@@ -8,6 +8,8 @@ class Game:
         self.result = 'To be determined...'
         self.id = id
 
+        self.get_result()
+
     def get_result(self):
         if self.home_goals > self.away_goals:
             self.result = {
@@ -19,7 +21,7 @@ class Game:
             }
         else:
             self.result = {
-                'winner': None
+                'winner': 0
             }
         
         return self.result['winner']

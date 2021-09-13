@@ -30,8 +30,8 @@ class TestGame(unittest.TestCase):
     def test_can_get_away_team_goals(self):
         self.assertEqual(0, self.game.away_goals)
 
-    def test_result_starts_not_determined(self):
-        self.assertEqual("To be determined...", self.game.result)
+    # def test_result_starts_not_determined(self):
+    #     self.assertEqual("To be determined...", self.game.result)
 
     def test_can_get_result__home_win(self):
         self.assertEqual(1, self.game.get_result())
@@ -43,4 +43,4 @@ class TestGame(unittest.TestCase):
 
     def test_can_get_result__draw(self):
         game_draw = Game(self.team_1, self.team_2, 1, 1)
-        self.assertEqual(None, game_draw.get_result())
+        self.assertEqual(0, game_draw.get_result())
