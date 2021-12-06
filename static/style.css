@@ -1,5 +1,7 @@
 body {
     background-color: rgb(6, 150, 160); 
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Fuzzy Bubbles', cursive;
 }
 
 .main-head {
@@ -56,6 +58,14 @@ body {
     margin: 10px;
     padding: 20px;
     border-radius: 30px;
+}
+
+.nav-list > li > a {
+    text-decoration: none;
+}
+
+.nav-list > li > a:hover {
+    color: chocolate;
 }
 
 #logo {
