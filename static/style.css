@@ -1,3 +1,47 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgb(108, 155, 42);
+}
+
+.main-head {
+    grid-area: header;
+    text-align: center;
+    background-color: blue;
+}
+
+.main-content {
+    grid-area: content;
+    text-align: center;
+    background-image: url("images/football.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* width: 1920px;
+    height: 1279px; */
+}
+
+.main-nav {
+    grid-area: nav;
+    
+}
+
+.main-footer {
+    grid-area: footer;
+    text-align: center;
+    background-color: blue;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 4fr 1fr;
+    grid-template-areas:
+      "nav header  header"
+      "nav    content content"
+      "nav    content content"
+      "nav footer  footer";
+    width: 100vw;
+    height: 100vh;
+}
+
+nav ul {
+     flex-direction: column;
 }
