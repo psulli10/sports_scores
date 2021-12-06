@@ -1,11 +1,11 @@
 body {
-    background-color: rgb(108, 155, 42);
+    background-color: rgb(6, 150, 160); 
 }
 
 .main-head {
     grid-area: header;
     text-align: center;
-    background-color: blue;
+    background-color: rgb(166, 202, 205);
 }
 
 .main-content {
@@ -20,13 +20,13 @@ body {
 
 .main-nav {
     grid-area: nav;
-    
 }
+
 
 .main-footer {
     grid-area: footer;
     text-align: center;
-    background-color: blue;
+    background-color: rgb(166, 202, 205);
 }
 
 .wrapper {
@@ -42,6 +42,25 @@ body {
     height: 100vh;
 }
 
-nav ul {
-     flex-direction: column;
+.nav-list {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+.nav-list > li {
+    background-color: rgb(166, 202, 205);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#logo {
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
 }
