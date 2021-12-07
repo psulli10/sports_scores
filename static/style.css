@@ -13,7 +13,7 @@ body {
 .main-content {
     grid-area: content;
     text-align: center;
-    background-image: url("images/football.jpg");
+    background-image: url("images/home.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /* width: 1920px;
