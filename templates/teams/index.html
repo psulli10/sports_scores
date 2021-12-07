@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='teams/style.css') }}">
+{% endblock head  %}
+
+{% block content %}
+    <h2>The teams list here</h2>
+    {{ teams }}
+{% endblock content %}
